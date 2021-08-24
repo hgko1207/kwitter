@@ -41,6 +41,14 @@ const firebaseConfig = {
 export default firebase.initializeApp(firebaseConfig);
 ```
 
+### React
+
+#### Router 설정
+
+```bash
+npm install react-router-dom
+```
+
 ## 참고
 
 - https://firebase.google.com/docs/web/setup?authuser=0;
