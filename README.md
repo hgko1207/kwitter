@@ -11,18 +11,31 @@
 npm install --save firebase
 ```
 
-앱을 생성하였을 때 나오는 설정 파일을 복사한 후 src 폴더에 firebase.js 파일을 생성하고 붙여넣기 한 후 아래와 같이 수정합니다.
+프로젝트 상단에 .env 파일을 생성합니다.
+앱을 생성하였을 때 나오는 Firebas 설정을 아래와 같이 변수를 설정하고 채워넣습니다.
+
+```js
+// .env
+REACT_APP_API_KEY=
+REACT_APP_AUTH_DOMAIN=
+REACT_APP_PROJECT_ID=
+REACT_APP_STORAGE_BUCKET=
+REACT_APP_MESSAGING_SENDERID=
+REACT_APP_APP_ID=
+```
+
+src 폴더에 firebase.js 파일을 생성합니다. .env 에 입력한 설정들을 불러와서 입력합니다.
 
 ```js
 import firebase from "firebase/app";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAGCluvE0Dhdctb2XReMzFc1hft2lW8xGA",
-    authDomain: "kwitter-a5106.firebaseapp.com",
-    projectId: "kwitter-a5106",
-    storageBucket: "kwitter-a5106.appspot.com",
-    messagingSenderId: "168715018538",
-    appId: "1:168715018538:web:5e022cb2a98bc7ecfb7e53"
+    apiKey: process.env.REACT_APP_API_KEY,
+    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_MESSAGING_SENDERID,
+    appId: process.env.REACT_APP_APP_ID
 };
 
 export default firebase.initializeApp(firebaseConfig);
