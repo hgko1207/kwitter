@@ -49,6 +49,19 @@ export default firebase.initializeApp(firebaseConfig);
 npm install react-router-dom
 ```
 
+### 경로 지정
+
+Absolute import를 사용하기 위해 jsconfig.json 파일을 만들어서 아래 내용을 복사합니다. import가 src 경로로부터 시작되도록 설정하였습니다.
+
+```json
+{
+  "compilerOptions": {
+    "baseUrl": "src"
+  },
+  "include": ["src"]
+}
+```
+
 ## 참고
 
 - https://firebase.google.com/docs/web/setup?authuser=0;
